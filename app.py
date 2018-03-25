@@ -338,7 +338,6 @@ def search_results(search_term):
 
 @app.route('/search_terms')
 def search_terms():
-    # pass # Replace with code
     # TODO 364: Edit this view function so it renders search_terms.html.
     # That template should show a list of all the search terms that have been searched so far. Each one should link to the gifs that resulted from that search.
     # HINT: All you have to do is make the right query in this view function and send the right data to the template! You can complete this in two lines. Check out the template for more hints!
@@ -376,7 +375,6 @@ def create_collection():
 @app.route('/collections',methods=["GET","POST"])
 @login_required
 def collections():
-    # pass # Replace with code
     # TODO 364: This view function should render the collections.html template so that only the current user's personal gif collection links will render in that template. Make sure to examine the template so that you send it the correct data!
     collections = PersonalGifCollection.query.filter_by(user_id = current_user.id).all()
     return render_template("collections.html", collections = collections)
